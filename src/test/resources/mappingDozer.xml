@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net
+      http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+    <mapping>
+        <class-a>com.apascualco.dozer.example.domain.Form</class-a>
+        <class-b>com.apascualco.dozer.example.domain.Employer</class-b>
+        <field>
+            <a>cityName</a>
+            <b>city.name</b>
+        </field>
+        <field>
+            <a>conuntryName</a>
+            <b>city.country</b>
+        </field>
+
+        <field custom-converter="com.apascualco.dozer.example.CompositeNameConverter">
+            <a>this</a>
+            <b>compositeName</b>
+        </field>
+
+        <field custom-converter="com.apascualco.dozer.example.YearsConverter" custom-converter-param="2007-12-03">
+            <a>this</a>
+            <b>yeas</b>
+        </field>
+    </mapping>
+</mappings>
